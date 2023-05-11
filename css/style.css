@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+* {
+  font-family: Meiryo;
+  font-size: 100%;
+}
+
+body {
+  font-size: .875rem;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  height: 80px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-inner {
+  display: flex;
+  padding-left: 16px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 110px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  list-style: none;
+}
+
+header li {
+  margin-right: 30px;
+}
+
+.form {
+  min-width: 165px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: .75rem;
+}
+
+
+@media (max-width:900px) {}
