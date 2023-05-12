@@ -7,41 +7,50 @@
 
 body {
   font-size: .875rem;
+  background: #f0f0f0;
 }
 
 .wrapper {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 120px;
 }
 
+/* ヘッダー */
+
 header {
-  height: 80px;
-  background: #f0f0f0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header-inner {
+  width: 1092px;
   display: flex;
   padding-left: 16px;
   margin: 0 auto;
 }
 
-.logo {
-  width: 110px;
+.logo-header {
+  width: 100px;
   height: auto;
+  margin-right: 60px;
 }
 
 nav {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 header li {
   margin-right: 30px;
 }
 
-.form {
+header li:last-child {
+  margin: 0;
+}
+
+.contact {
   min-width: 165px;
   background: #000;
   color: #fff;
@@ -50,5 +59,339 @@ header li {
   font-size: .75rem;
 }
 
+.contact:hover {
+  opacity: 0.8;
+}
 
-@media (max-width:900px) {}
+/* メイン */
+
+.main-img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  margin-bottom: 120px;
+}
+
+/* 各セクション共通 */
+
+section {
+  padding-inline: 20px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: 0.6rem;
+  margin-bottom: 8px;
+}
+
+h3 {
+  margin-bottom: 32px;
+  font-size: 0.875;
+}
+
+hr {
+  width: 40px;
+  margin-bottom: 64px;
+}
+
+/* NEWSセクション */
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-card {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-card:nth-child(2),
+.news-card:nth-child(3) {
+  border-left: 1px solid #000;
+  padding-left: 20px;
+}
+
+time {
+  display: inline-block;
+  margin: 0 16px 24px 0;
+
+}
+
+.news-card span {
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* ABOUTセクション */
+
+#about {
+  display: flex;
+  padding: 0 0 132px 0;
+}
+
+.about-img {
+  width: 54%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.about-text {
+  padding: 0 5.5%;
+  margin-top: 185px;
+}
+
+.about-text hr {
+  margin-bottom: 52px;
+}
+
+.about-text p {
+  line-height: 2.2;
+}
+
+/* BUSINESSセクション */
+
+#business hr {
+  margin-bottom: 55px;
+}
+
+.business-container {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.business-left-container {
+  padding: 100px 30px 0 0;
+}
+
+figcaption {
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+figcaption::before {
+  content: "ー";
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+figure img {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+
+.business-right-container {
+  padding: 0 0 0 30px;
+}
+
+/* COMPANYセクション */
+
+#company {
+  padding: 0;
+  max-width: 1032px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.company-text {
+  width: 55%;
+  padding: 100px 6%;
+  background: #fff;
+}
+
+.company-text dl {
+  display: flex;
+  line-height: 2.2;
+}
+
+.company-text dt {
+  font-weight: normal;
+  width: 20%;
+}
+
+.company-img {
+  width: 53%;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+  top: 116px;
+  right: 0px;
+}
+
+/* footer */
+
+footer {
+  background: #fff;
+  padding: 0 16px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 45px 0;
+  margin: 0 auto;
+}
+
+.logo-footer {
+  width: 100px;
+}
+
+.footer-container p {
+  line-height: 1.5;
+}
+
+small {
+  display: block;
+  margin: auto;
+  max-width: 1000px;
+}
+
+/********************
+    レスポンシブ対応
+ ********************/
+
+@media (max-width:900px) {
+
+  .wrapper {
+    margin: 0 auto 96px;
+  }
+
+  header {
+    padding-block: 16px;
+  }
+
+  .header-inner {
+    display: block;
+  }
+
+  .logo {
+    width: 80px;
+    margin-bottom: 14px;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .main-img {
+    margin-bottom: 80px;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  hr {
+    margin-bottom: 48px;
+  }
+
+  .news-container {
+    display: block;
+  }
+
+  .news-card {
+    height: auto;
+    margin-bottom: 44px;
+  }
+
+  .news-card:nth-child(2),
+  .news-card:nth-child(3) {
+    border-left: none;
+    padding: 0;
+  }
+
+  #about {
+    flex-direction: column;
+    padding: 0 0 93px 0;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .about-text {
+    margin-top: 0;
+    padding: 32px 20px 0 20px;
+  }
+
+  .about-text hr {
+    margin-bottom: 34px;
+  }
+
+  #business {
+    margin-bottom: 80px;
+  }
+
+  #business hr {
+    margin-bottom: 38px;
+  }
+
+  .business-container {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .business-left-container,
+  .business-right-container {
+    padding: 0;
+  }
+
+  figure img {
+    display: block;
+    margin: 0 auto 35px;
+  }
+
+  #company {
+    padding: 0 16px;
+    display: block;
+  }
+
+  .company-text {
+    padding: 42px 0 28px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .company-text hr {
+    margin-bottom: 30px;
+  }
+
+  .company-text dl {
+    display: block;
+    margin-bottom: 14px;
+    line-height: 1.95;
+  }
+
+  .company-text dd::before {
+    content: "　";
+  }
+
+  .company-text span::after {
+    content: "　";
+  }
+
+  .company-img {
+    position: static;
+    width: 100%;
+  }
+
+  .footer-container {
+    display: block;
+    margin: 0;
+  }
+
+  .logo-footer {
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+}
