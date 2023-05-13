@@ -10,11 +10,6 @@ body {
   background: #f0f0f0;
 }
 
-.wrapper {
-  max-width: 1000px;
-  margin: 0 auto 120px;
-}
-
 /* ヘッダー */
 
 header {
@@ -36,7 +31,7 @@ header {
   margin-right: 60px;
 }
 
-nav {
+ul {
   display: flex;
   list-style: none;
   align-items: center;
@@ -70,10 +65,22 @@ header li:last-child {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  margin-bottom: 120px;
 }
 
 /* 各セクション共通 */
+
+#news,
+#business {
+  max-width: 1000px;
+  margin: 0 auto 120px;
+  padding-inline: 20px;
+}
+
+.main-img,
+#about,
+#company {
+  margin: 0 auto 120px;
+}
 
 h2 {
   font-size: 2.25rem;
@@ -128,7 +135,6 @@ time {
 
 #about {
   display: flex;
-  padding: 0 0 132px 0;
 }
 
 .about-img {
@@ -192,7 +198,6 @@ figure img {
 #company {
   padding: 0;
   max-width: 1032px;
-  margin: 0 auto 134px;
   display: flex;
   position: relative;
 }
@@ -205,12 +210,18 @@ figure img {
 
 .company-text dl {
   display: flex;
-  line-height: 2.2;
+  flex-wrap: wrap;
 }
 
 .company-text dt {
   font-weight: normal;
   width: 20%;
+  line-height: 2.2;
+}
+
+.company-text dd {
+  width: 80%;
+  line-height: 2.2;
 }
 
 .company-img {
@@ -222,7 +233,7 @@ figure img {
   right: 0px;
 }
 
-/* footer */
+/* フッター */
 
 footer {
   background: #fff;
@@ -230,6 +241,7 @@ footer {
 }
 
 .footer-container {
+  max-width: 1000px;
   display: flex;
   justify-content: space-between;
   padding: 45px 0;
@@ -257,13 +269,15 @@ small {
 /* 指定のブレイクポイント */
 @media (max-width:900px) {
 
-  section {
+  #news,
+  #about,
+  #business,
+  #company {
     padding-inline: 20px;
+    margin: 0 auto 80px;
   }
 
-  .wrapper {
-    margin: 0 auto 96px;
-  }
+
 
   header {
     padding-block: 16px;
@@ -284,7 +298,7 @@ small {
   }
 
   .main-img {
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
   }
 
   h3 {
@@ -313,7 +327,6 @@ small {
 
   #about {
     flex-direction: column;
-    padding: 0 0 80px 0;
   }
 
   .about-img {
@@ -323,15 +336,11 @@ small {
 
   .about-text {
     margin-top: 0;
-    padding: 32px 20px 0 20px;
+    padding: 32px 0 0;
   }
 
   .about-text hr {
     margin-bottom: 34px;
-  }
-
-  #business {
-    margin-bottom: 80px;
   }
 
   #business hr {
@@ -357,7 +366,6 @@ small {
   #company {
     padding: 0 16px;
     display: block;
-    margin-bottom: 0;
   }
 
   .company-text {
@@ -372,12 +380,17 @@ small {
 
   .company-text dl {
     display: block;
-    margin-bottom: 14px;
-    line-height: 1.95;
   }
 
   .company-text dt {
     width: 100%;
+    line-height: 1.95;
+  }
+
+  .company-text dd {
+    width: 100%;
+    margin-bottom: 14px;
+    line-height: 1.95;
   }
 
   .company-text dd::before {
@@ -437,17 +450,16 @@ small {
   figcaption {
     margin-bottom: 8px;
   }
-}
 
-
-.company-img {
-  height: 250px;
+  .company-img {
+    height: 250px;
+  }
 }
 
 /* 320px付近でのnavのはみ出し防止 */
 @media (max-width:352px) {
 
-  nav {
+  ul {
     justify-content: space-between;
   }
 
